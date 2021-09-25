@@ -1,0 +1,90 @@
+:root {
+    --primary-color: #355487;
+    --headFoot-text: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color: var(--headFoot-text);
+}
+
+
+h1 {
+    
+}
+
+nav {
+    display: flex;
+   
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-areas: 
+        "about-me" 
+        "work"
+        "contact";
+}
+
+.about-me {
+    display: flex;
+    grid-area: about-me;
+}
+
+.work {
+    grid-area: work;
+    display: flex;
+}
+
+.work-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-areas:
+        "first first"
+        "second third"
+        "fourth fifth";
+}
+
+.first-project {
+    grid-area: first;
+}
+
+.second-project {
+    grid-area: second;
+}
+
+.third-project {
+    grid-area: third;
+}
+
+.fourth project {
+    grid-area: fourth;
+}
+
+.fifth-project {
+    grid-area: fifth;
+}
+
+.contact-me {
+    display: flex;
+    grid-area: contact;
+}
+
+/* footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--primary-color);
+    color: var(--headFoot-text);
+} */
