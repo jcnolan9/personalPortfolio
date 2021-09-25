@@ -1,6 +1,7 @@
 :root {
     --primary-color: #355487;
     --headFoot-text: #fff;
+    --myMargin: 5%;
 }
 
 header {
@@ -10,20 +11,18 @@ header {
     color: var(--headFoot-text);
 }
 
-
-h1 {
-    
-}
-
-nav {
-    display: flex;
-   
-}
-
 ul {
     display: flex;
     flex-wrap: wrap;
 }
+
+ul li {
+    margin-right: var(--myMargin);
+}
+
+/* ul:last-child {
+    margin-right: 0;
+} */
 
 main {
     margin: 0 auto;
@@ -34,16 +33,22 @@ main {
         "about-me" 
         "work"
         "contact";
+    grid-row-gap: 20px;
 }
 
 .about-me {
-    display: flex;
     grid-area: about-me;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr; 
 }
 
 .work {
     grid-area: work;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr; 
+
 }
 
 .work-content {
@@ -58,10 +63,13 @@ main {
 
 .first-project {
     grid-area: first;
+    background-image: url("images/01-app-desktop.png");
 }
+
 
 .second-project {
     grid-area: second;
+    
 }
 
 .third-project {
@@ -77,8 +85,10 @@ main {
 }
 
 .contact-me {
-    display: flex;
     grid-area: contact;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
 }
 
 /* footer {
