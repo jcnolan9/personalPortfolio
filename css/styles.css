@@ -2,33 +2,64 @@
     --primary-color: #355487;
     --headFoot-text: #fff;
     --myMargin: 5%;
+    font-size: 16px;
+    --h3-back: #03bafc;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
     background-color: var(--primary-color);
     color: var(--headFoot-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
-ul {
+h1 {
+    margin: 3% 0 3% 5%;
+    font-size: 3em;
+}
+
+nav {
+    margin: 3% 0 3% 0;
+    width: 40%;
+}
+
+header ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
-ul li {
+ nav ul li {
     margin-right: var(--myMargin);
+    font-size: 1.5em; 
+    display: inline;
 }
 
-/* ul:last-child {
-    margin-right: 0;
-} */
+nav ul li a {
+    color: var(--headFoot-text);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: var(--headFoot-text);
+    /* box-shadow: 2% 2% var(--headFoot-text); */
+}
+
+.decoration {
+    min-height: 100px;
+    background: url("../images/jsCode.jpeg");
+}
+
+h2 {
+    font-size: 2em;
+}
 
 main {
-    margin: 0 auto;
+    margin: 2% 3% 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas: 
         "about-me" 
         "work"
@@ -36,17 +67,28 @@ main {
     grid-row-gap: 20px;
 }
 
-.about-me {
+#about-me {
     grid-area: about-me;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 8fr;
     grid-template-rows: 1fr; 
 }
 
-.work {
+h2 {
+    text-align: right;
+    padding-right: 5%;
+    /* margin-left: 15%; */
+    border-right: 5px solid var(--primary-color);
+}
+
+#about-me p {
+    margin-left: var(--myMargin);
+}
+
+#work {
     grid-area: work;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 8fr;
     grid-template-rows: 1fr; 
 
 }
@@ -54,47 +96,128 @@ main {
 .work-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 1fr 1fr;
+    /* grid-template-rows: 2fr 1fr 1fr; */
+    grid-template-rows: auto auto auto;
     grid-template-areas:
         "first first"
         "second third"
         "fourth fifth";
+    margin-left: var(--myMargin);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
 }
 
 .first-project {
     grid-area: first;
-    background-image: url("images/01-app-desktop.png");
+    /* background-size: contain; */
+    /* background-repeat: no-repeat;
+    background-clip: content-box; */
 }
 
+h3 {
+    padding: 10px;
+    background-color: var(--h3-back);
+    color: var(--headFoot-text); 
+    position: relative;
+}
+
+.first-project h3 {
+    top: 70%;
+    display: inline-block;
+}
+
+.second-project h3, .third-project h3, .fourth-project h3, .fifth-project h3, 
+.first-project h3  {
+    top: 60%;
+    display: inline-block;
+}
+
+.css-background {
+    min-height: 300px;
+    background-image: url("../images/01-app-desktop.png");
+    background-origin: padding-box;
+    background-position-x: 850px;
+    background-position-y: -600px;
+    width: 100%;
+}
+
+/* .first-project img {
+    max-width: 544px;
+    height: auto;
+}
+
+.second-project img, .third-project img, .fourth-project img, .fifth-project img {
+    object-fit: cover;
+} */
 
 .second-project {
     grid-area: second;
     
 }
 
+.contact-background {
+    min-height: 150px;
+    background-image: url("../images/contactForm.PNG");
+    background-origin: padding-box;
+    background-position-x: 35%;
+    background-position-y: 84%;
+    width: 100%;
+}
+
 .third-project {
     grid-area: third;
 }
 
+.rps-background {
+    min-height: 150px;
+    background-image: url("../images/RPSgame.PNG");
+    background-origin: padding-box;
+    background-position-x: 5%;
+    background-position-y: 87%;
+    width: 100%;
+}
+
+
+
 .fourth project {
     grid-area: fourth;
+}
+
+.blockchain-background {
+    min-height: 150px;
+    background-image: url("../images/dappDev.jpg");
+    background-origin: padding-box;
+    background-position-x: 75%;
+    background-position-y: 35%;
+    width: 100%;
 }
 
 .fifth-project {
     grid-area: fifth;
 }
 
-.contact-me {
-    grid-area: contact;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
+.full-stack-background {
+    min-height: 150px;
+    background-image: url("../images/fullStack.jpg");
+    background-origin: padding-box;
+    background-position-x: center;
+    background-position-y: 50%;
+    width: 100%;
 }
 
-/* footer {
+#contact-me {
+    grid-area: contact;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+#contact-me ul {
     display: flex;
-    position: fixed;
-    bottom: 0;
-    background-color: var(--primary-color);
-    color: var(--headFoot-text);
-} */
+    margin-left: var(--myMargin);
+}
+
+#contact-me li {
+    margin-right: 1%;
+}
