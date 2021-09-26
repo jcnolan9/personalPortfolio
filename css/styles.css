@@ -4,6 +4,7 @@
     --myMargin: 5%;
     font-size: 16px;
     --h3-back: #03bafc;
+    --init-opacity: 0.6;
 }
 
 header {
@@ -38,7 +39,7 @@ header ul {
 
 nav ul li a {
     color: var(--headFoot-text);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 nav ul li a:hover {
@@ -59,7 +60,7 @@ main {
     margin: 2% 3% 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto 10%;
     grid-template-areas: 
         "about-me" 
         "work"
@@ -124,12 +125,14 @@ h3 {
 .first-project h3 {
     top: 70%;
     display: inline-block;
+    z-index: 1;
 }
 
 .second-project h3, .third-project h3, .fourth-project h3, .fifth-project h3, 
 .first-project h3  {
     top: 60%;
     display: inline-block;
+    z-index: 1;
 }
 
 .css-background {
@@ -139,6 +142,14 @@ h3 {
     background-position-x: 850px;
     background-position-y: -600px;
     width: 100%;
+    border: 7px solid var(--h3-back);
+    opacity: var(--init-opacity); 
+    z-index: 0;
+}
+
+.css-background:hover, .contact-background:hover, .rps-background:hover, .blockchain-background:hover,
+ .full-stack-background:hover {
+    opacity: 1;
 }
 
 /* .first-project img {
@@ -162,6 +173,9 @@ h3 {
     background-position-x: 35%;
     background-position-y: 84%;
     width: 100%;
+    border: 7px solid var(--h3-back);
+    z-index: 0;
+    opacity: var(--init-opacity); 
 }
 
 .third-project {
@@ -175,6 +189,9 @@ h3 {
     background-position-x: 5%;
     background-position-y: 87%;
     width: 100%;
+    border: 7px solid var(--h3-back);
+    z-index: 0;
+    opacity: var(--init-opacity); 
 }
 
 
@@ -190,6 +207,9 @@ h3 {
     background-position-x: 75%;
     background-position-y: 35%;
     width: 100%;
+    border: 7px solid var(--h3-back);
+    z-index: 0;
+    opacity: var(--init-opacity);  
 }
 
 .fifth-project {
@@ -203,6 +223,9 @@ h3 {
     background-position-x: center;
     background-position-y: 50%;
     width: 100%;
+    border: 7px solid var(--h3-back);
+    z-index: 0;
+    opacity: var(--init-opacity);  
 }
 
 #contact-me {
@@ -215,9 +238,53 @@ h3 {
 
 #contact-me ul {
     display: flex;
+    flex-wrap: wrap;
     margin-left: var(--myMargin);
+    font-size: 1.5em;
+    justify-content: space-between;
 }
 
 #contact-me li {
     margin-right: 1%;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 576px) {
+    .work-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* grid-template-rows: 2fr 1fr 1fr; */
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas:
+            "first"
+            "second" 
+            "third"
+            "fourth" 
+            "fifth";
+        margin-left: var(--myMargin);
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
+    }
+
+    .first-project {
+        grid-area: first;
+    }
+
+    .second-project {
+        grid-area: second;
+    }
+
+    .third-project {
+        grid-area: third;
+    }
+
+    .fourth-project {
+        grid-area: fourth;
+    }
+
+    .fifth-project {
+        grid-area: fifth;
+    }
+
+
 }
